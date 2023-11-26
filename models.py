@@ -14,7 +14,6 @@ class Ticket(db.Model):
     assigned_to = db.Column(db.Integer, db.ForeignKey('user_login.id'), nullable=True)
     raised_by = db.Column(db.Integer, db.ForeignKey('user_login.id'), nullable=True)
 
-
 class User(db.Model):
     __tablename__ = 'users'
     user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)

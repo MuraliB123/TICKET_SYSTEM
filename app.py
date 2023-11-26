@@ -2,14 +2,29 @@ from flask import Flask, render_template, request, session
 app = Flask(__name__)
 from flask import jsonify
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 app = Flask(__name__, static_folder='static')
 app.secret_key = 'mykey'
-engine = create_engine('mysql+pymysql://root:new_password@localhost/ticket_system')
+
+
+from sqlalchemy import URL, create_engine
+
+connection_string = URL.create(
+    'postgresql',
+    username='muralibabu1729',
+    password='k8YoTmpfr1BG',
+    host='ep-round-lab-18399406.us-east-2.aws.neon.tech',
+    database='ticket_system'
+)
+
+engine = create_engine(connection_string, connect_args={'sslmode': 'require'})
+
+
+
+engine = create_engine(connection_string)
 Session = sessionmaker(bind=engine)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:new_password@localhost/ticket_system'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://muralibabu1729:k8YoTmpfr1BG@ep-round-lab-18399406.us-east-2.aws.neon.tech/ticket_system'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
