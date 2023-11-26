@@ -9,7 +9,7 @@ app = Flask(__name__, static_folder='static')
 app.secret_key = 'mykey'
 engine = create_engine('mysql+pymysql://root:new_password@localhost/ticket_system')
 Session = sessionmaker(bind=engine)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:new_password@localhost/ticket_system'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:new_password@localhost/ticket_system'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
