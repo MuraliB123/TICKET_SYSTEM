@@ -7,8 +7,8 @@ from sqlalchemy.orm import sessionmaker
 app = Flask(__name__, static_folder='static')
 app.secret_key = 'mykey'
 
+from sqlalchemy.engine import URL, create_engine
 
-from sqlalchemy import URL, create_engine
 
 connection_string = URL.create(
     'postgresql',
