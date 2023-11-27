@@ -43,7 +43,8 @@ def home():
         if user:
             data = "success"
             session['user_id'] = user.id
-            return render_template('user_login.html',data=data)
+            assigned_tickets = Ticket.query.filter_by(assigned_to=user.id).all()
+            return render_template('user_login.html', assigned_tickets=assigned_tickets)
             
         else:
             data = "Login Failed"
