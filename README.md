@@ -5,10 +5,14 @@ This is an example of a simple Round Robin algorithm for ticket assignment in Py
 
 ## Visualization
 
-You can visualize the round-robin assignment like this:
+Below are the users whom the tickets can be assigned
 
 ![Round Robin](pic_1.png)
 
-Replace `"path/to/round_robin_image.png"` with the actual path to your image file.
-
-Feel free to customize the user names, ticket numbers, and other details as needed.
+The tickets table is hown below
+![Round Robin](pic_2.png)
+the website is hosted in render in below link
+[visit](https://test-app-f9xn.onrender.com/)
+1. The database is hosted in neon
+2. user id = 1 password = qwerty.
+3. after login raise the tickets.
