@@ -7,7 +7,7 @@ This is an example of a simple Round Robin algorithm for ticket assignment in Py
 
 You can visualize the round-robin assignment like this:
 
-![Round Robin](path/to/round_robin_image.png)
+![Round Robin](pic_1.png)
 
 Replace `"path/to/round_robin_image.png"` with the actual path to your image file.
 
